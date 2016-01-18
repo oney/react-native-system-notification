@@ -37,8 +37,6 @@ import android.util.Log;
  */
 public class NotificationModule extends ReactContextBaseJavaModule {
     final static String PREFERENCES_KEY = "ReactNativeSystemNotification";
-    public Activity mActivity = null;
-    public Context mContext = null;
     public NotificationManager mNotificationManager = null;
 
     @Override
@@ -49,11 +47,9 @@ public class NotificationModule extends ReactContextBaseJavaModule {
     /**
      * Constructor.
      */
-    public NotificationModule(ReactApplicationContext reactContext, Activity activity) {
+    public NotificationModule(ReactApplicationContext reactContext) {
         super(reactContext);
 
-        this.mContext = reactContext;
-        this.mActivity = activity;
         this.mNotificationManager = (NotificationManager) new NotificationManager(reactContext);
 
         listenNotificationEvent();

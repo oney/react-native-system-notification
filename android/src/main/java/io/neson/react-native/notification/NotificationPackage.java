@@ -16,18 +16,14 @@ import java.util.List;
  * The React package.
  */
 public class NotificationPackage implements ReactPackage {
-    private Activity mActivity = null;
-
-    public NotificationPackage(Activity activity) {
-        mActivity = activity;
-    }
+    public NotificationPackage() {}
 
     @Override
     public List<NativeModule> createNativeModules(
             ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
 
-        modules.add(new NotificationModule(reactContext, mActivity));
+        modules.add(new NotificationModule(reactContext));
         return modules;
     }
 
